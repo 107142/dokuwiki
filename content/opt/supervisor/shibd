@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "x$APACHE2_SHIBBOLETH" = "x1" ]; then
+	exec /usr/sbin/shibd -F
+else
+		sleep 2 && exit 0
+fi
