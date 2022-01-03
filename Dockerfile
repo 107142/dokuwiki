@@ -6,7 +6,7 @@ RUN printf "Running on ${BUILDPLATFORM:-linux/amd64}, building for ${TARGETPLATF
 # Basic info
 ARG NAME
 ARG BUILD_DATE
-ARG VERSION=20180422.a-2.1
+ARG VERSION=20180422.a-2.1-2
 ARG VCS_REF
 ARG VCS_URL
 
@@ -67,7 +67,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 	&& a2enmod setenvif \
 	&& usermod -aG tty www-data \
 	&& chmod o+w /dev/std* \
-	&& mv /etc/dokuwiki /etc/dokuwiki.dist \
+	&& mv -n /etc/dokuwiki /etc/dokuwiki.dist \
 	&& mv /etc/shibboleth /etc/shibboleth.dist \
 	&& mv /var/lib/dokuwiki /var/lib/dokuwiki.dist \
 	&& mkdir -p /run/shibboleth && chown _shibd /run/shibboleth \
