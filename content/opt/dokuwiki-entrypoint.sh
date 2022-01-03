@@ -53,7 +53,7 @@ if [ -f /etc/apache2/ssl/dokuwiki.crt ] && [ -f /etc/apache2/ssl/dokuwiki.key ];
 		if [ ! -f /etc/apache2/ssl/dokuwiki.chain ]; then
 		echo > /etc/apache2/ssl/dokuwiki.chain
 	fi
-	a2enmod -q ssl >/dev/null 2>&1
+	a2enmod -q ssl headers >/dev/null 2>&1
 	a2ensite -q dokuwiki-ssl >/dev/null 2>&1
 	chown www-data:www-data /etc/apache2/ssl/dokuwiki.{crt,key} || true
 
