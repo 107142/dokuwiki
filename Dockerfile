@@ -67,7 +67,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 	&& a2enmod setenvif \
 	&& usermod -aG tty www-data \
 	&& chmod o+w /dev/std* \
-	&& mv /etc/dokuwiki /etc/dokuwiki.dist \
+	&& mv -n /etc/dokuwiki /etc/dokuwiki.dist \
 	&& mv /etc/shibboleth /etc/shibboleth.dist \
 	&& mv /var/lib/dokuwiki /var/lib/dokuwiki.dist \
 	&& mkdir -p /run/shibboleth && chown _shibd /run/shibboleth \
